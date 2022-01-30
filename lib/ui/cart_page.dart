@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CartPage extends StatelessWidget {
@@ -15,19 +16,24 @@ class CartPage extends StatelessWidget {
         mainAxisSize:MainAxisSize.max,
         children:[
           Padding(
-              padding:const EdgeInsets.all(5),
+              padding:const EdgeInsets.all(10),
               child:Row(
                 mainAxisAlignment:MainAxisAlignment.spaceBetween,
                 crossAxisAlignment:CrossAxisAlignment.center,
                 mainAxisSize:MainAxisSize.max,
                 children:[
-                  Padding(
-                      padding:const EdgeInsets.all(5),
-                      child:Image.asset(
-                        'assets/icons/back_arrow_icon.png',
-                        width:15,
-                        fit:BoxFit.fitWidth,
-                      )
+                  InkWell(
+                    onTap: (){
+                      Get.back();
+                    },
+                    child: Padding(
+                        padding:const EdgeInsets.all(5),
+                        child:Image.asset(
+                          'assets/icons/back_arrow_icon.png',
+                          width:15,
+                          fit:BoxFit.fitWidth,
+                        )
+                    ),
                   ),Text(
                     'My Cart',
                     style:GoogleFonts.getFont('Roboto',
@@ -209,7 +215,7 @@ class CartPage extends StatelessWidget {
                                     ),
                                     textAlign:TextAlign.left,
                                   ),Text(
-                                    '\$1250',
+                                    '\$240',
                                     style:GoogleFonts.getFont('Roboto',
                                       textStyle:const TextStyle(fontSize:14,
                                         color:Color(0xff000000),
@@ -236,7 +242,7 @@ class CartPage extends StatelessWidget {
                                     ),
                                     textAlign:TextAlign.left,
                                   ),Text(
-                                    '\$40',
+                                    '\$29',
                                     style:GoogleFonts.getFont('Roboto',
                                       textStyle:const TextStyle(fontSize:14,
                                         color:Color(0xff000000),
